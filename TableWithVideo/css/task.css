@@ -1,0 +1,58 @@
+:root {
+  --main-color: #04AA6D;
+}
+
+/* header style */
+
+header {
+  height: 80px;
+  align-items: center;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header div {
+  text-align: center;
+  vertical-align: middle;
+}
+
+img,
+h1 {
+  display: inline-block;
+  vertical-align: middle;
+  color: green;
+}
+
+/* video style */
+
+.video-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 20px auto ;
+}
+
+/* table style */
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  font-size: 23px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+th {
+  background-color: var(--main-color);
+  color: white;
+}
