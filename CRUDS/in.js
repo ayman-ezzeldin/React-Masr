@@ -1,4 +1,6 @@
-const productDescriptionInput = document.getElementById("productDescriptionInput");
+const productDescriptionInput = document.getElementById(
+  "productDescriptionInput"
+);
 const productNameInput = document.getElementById("productNameInput");
 const productCategoryInput = document.getElementById("productCategoryInput");
 const productPriceInput = document.getElementById("productPriceInput");
@@ -8,7 +10,6 @@ const addProductBtn = document.getElementById("addProductBtn");
 const updateProductBtn = document.getElementById("updateProductBtn");
 const showData = document.getElementById("showData");
 const searchInput = document.getElementById("searchInput");
-
 
 window.addEventListener("DOMContentLoaded", displayData);
 
@@ -22,7 +23,7 @@ function localStorageData() {
   return products;
 }
 
-addProductBtn.addEventListener("click", ()=> {
+addProductBtn.addEventListener("click", () => {
   const productName = productNameInput.value;
   const productCategory = productCategoryInput.value;
   const productPrice = productPriceInput.value;
@@ -30,7 +31,14 @@ addProductBtn.addEventListener("click", ()=> {
   const productQuantity = productQuantityInput.value;
   const productDescription = productDescriptionInput.value;
   const products = localStorageData();
-  products.push({ productName, productCategory, productPrice, productDiscount, productQuantity, productDescription });
+  products.push({
+    productName,
+    productCategory,
+    productPrice,
+    productDiscount,
+    productQuantity,
+    productDescription,
+  });
   localStorage.setItem("products", JSON.stringify(products));
   displayData();
   clearValues();
@@ -56,7 +64,7 @@ function displayData() {
 
 function deleteProduct(index) {
   const products = localStorageData();
-      products.splice(index, 1);
+  products.splice(index, 1);
   localStorage.setItem("products", JSON.stringify(products));
   displayData();
 }
@@ -72,21 +80,28 @@ function updateProduct(index) {
   deleteProduct(index);
 }
 
-
 function clearValues() {
-    productNameInput.value = "";
-    productCategoryInput.value = "";
-    productPriceInput.value = "";
-    productDiscountInput.value = "";
-    productQuantityInput.value = "";
-    productDescriptionInput.value = "";
-  }
+  productNameInput.value = "";
+  productCategoryInput.value = "";
+  productPriceInput.value = "";
+  productDiscountInput.value = "";
+  productQuantityInput.value = "";
+  productDescriptionInput.value = "";
+}
+
+searchInput.addEventListener("input", searchProduct);
 
 function searchProduct() {
   const products = localStorageData();
   const searchText = searchInput.value;
-  const filteredProducts = products.filter((product) =>
-    product.productName.toLowerCase().includes(searchText.toLowerCase())
+  const filteredProducts = products.filter(
+    (product) =>
+      product.productName.toLowerCase().includes(searchText.toLowerCase()) ||
+      product.productCategory.toLowerCase().includes(searchText.toLowerCase()) || 
+      product.productDescription.toLowerCase().includes(searchText.toLowerCase()) || 
+      product.productPrice.toLowerCase().includes(searchText.toLowerCase()) || 
+      product.productDiscount.toLowerCase().includes(searchText.toLowerCase()) || 
+      product.productQuantity.toLowerCase().includes(searchText.toLowerCase())
   );
   let tableData = "";
   filteredProducts.forEach((product, index) => {
@@ -103,5 +118,3 @@ function searchProduct() {
   });
   showData.innerHTML = tableData;
 }
-
-
