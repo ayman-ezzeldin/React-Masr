@@ -82,4 +82,26 @@ function clearValues() {
     productDescriptionInput.value = "";
   }
 
+function searchProduct() {
+  const products = localStorageData();
+  const searchText = searchInput.value;
+  const filteredProducts = products.filter((product) =>
+    product.productName.toLowerCase().includes(searchText.toLowerCase())
+  );
+  let tableData = "";
+  filteredProducts.forEach((product, index) => {
+    tableData += `<tr>
+    <td>${product.productName}</td>
+    <td>${product.productCategory}</td>
+    <td>${product.productPrice}</td>
+    <td>${product.productDiscount}</td>
+    <td>${product.productQuantity}</td>
+    <td>${product.productDescription}</td>
+    <td><button onclick="updateProduct(${index})" class="btn btn-outline-info">Update</button></td>
+    <td><button onclick="deleteProduct(${index})" class="btn btn-outline-danger">Delete</button></td>
+  </tr>`;
+  });
+  showData.innerHTML = tableData;
+}
+
 
