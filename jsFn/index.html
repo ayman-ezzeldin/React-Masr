@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/pexels-lilartsy-3150547.jpg" type="image/x-icon">
+    <title>Books</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="library">
+        <div class="sidebar">
+            <img src="images/pexels-ekrulila-2128249.jpg" onclick='showImage( "images/pexels-ekrulila-2128249.jpg" , "Book1" )' alt="Book1" />
+            <img src="images/pexels-mikhail-nilov-6981010.jpg" onclick='showImage( "images/pexels-mikhail-nilov-6981010.jpg" , "Book2" )' alt="" />
+            <img src="images/pexels-polina-zimmerman-3747468.jpg" onclick='showImage( "images/pexels-polina-zimmerman-3747468.jpg" , "Book3" )' alt="" />
+              <img src="images/pexels-rickyrecap-1907784.jpg" onclick='showImage( "images/pexels-rickyrecap-1907784.jpg" , "Book4" )' alt="" />
+        </div>
+        <main>
+          <h1 class="title">My Library</h1>
+          <div class="image">
+            <img class="book" src="images/pexels-lilartsy-3150547.jpg" alt="" />
+          </div>
+        </main>
+    </div>
+    </div>
+    <script>
+      function showImage(src , title) {
+        document.querySelector(".book").src = src;
+        document.querySelector(".title").innerHTML = title;
+      }
+    </script>
+  </body>
+</html>
