@@ -14,7 +14,6 @@ const SingleProduct = () => {
           <div className="row align-items-center">
             <div className="col-lg-7">
               <h1>Product Details</h1>
-             
             </div>
             
           </div>
