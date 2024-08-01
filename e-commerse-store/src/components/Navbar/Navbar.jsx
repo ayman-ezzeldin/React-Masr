@@ -8,10 +8,10 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar__container">
-                <div className='navbar__logo'>
-                <img src={logo} alt="logo" />
-                <p>SHOPFY</p>
-                </div>
+                <Link to='/' className='navbar__logo flex flex-row items-center gap-1 '>
+                    <img src={logo} alt="logo" />
+                    <p>SHOPFY</p>
+                </Link>
                 <ul className="navbar__menu">
                     <Link to='/' onClick={() => setMenu('Shop')} className="navbar__item">
                         Shop{menu === 'Shop' && <hr/>}

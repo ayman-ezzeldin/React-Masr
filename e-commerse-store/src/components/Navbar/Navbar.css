@@ -1,7 +1,5 @@
 body {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    /* line-height: 1.5; */
-    /* font-weight: 400; */
 }
 * {
     margin: 0;
@@ -73,7 +71,7 @@ a {
     height: 4px;
     border: none;
     border-radius: 10px;
-    background-color: tomato;
+    background-color: rgb(32, 203, 32);
 }
 
 .navbar__login {
