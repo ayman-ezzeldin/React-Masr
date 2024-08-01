@@ -4,7 +4,7 @@ import './NewCollection.css';
 const NewCollection = () => {
   return (
     <div className='newCollection  '>
-      <h1>New Collection</h1>
+      <h1 className='text-3xl my-4 font-semibold ' >New Collection</h1>
       <div className='newCollection_items'>
       {
         new_collections.map((item) => {
