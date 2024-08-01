@@ -2,12 +2,16 @@ import new_collections from '../Assets/new_collections';
 import Items from "../Items/Items";
 import '../NewCollection/NewCollection.css';
 function Men() {
+  const menCollection = new_collections.filter(item => {
+    return item.name.includes('Men') 
+  } )
+  console.log(menCollection);
   return (
     <div className='newCollection'>
-      <h1>New Collection</h1>
+      <h1 className='text-3xl my-4' >Men&apos;s Collection</h1>
       <div className='newCollection_items'>
       {
-        new_collections.map((item) => {
+        menCollection.map((item) => {
           return (
             <Items key={item.id} name={item.name} newPrice={item.new_price} oldprice={item.old_price} image={item.image} />
           );

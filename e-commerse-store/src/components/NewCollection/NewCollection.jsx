@@ -3,7 +3,7 @@ import Items from "../Items/Items";
 import './NewCollection.css';
 const NewCollection = () => {
   return (
-    <div className='newCollection'>
+    <div className='newCollection  '>
       <h1>New Collection</h1>
       <div className='newCollection_items'>
       {
